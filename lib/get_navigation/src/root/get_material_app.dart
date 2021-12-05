@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_phone_simulator/get_phone_simulator.dart';
 
 import '../../../get_core/get_core.dart';
 import '../../../get_instance/get_instance.dart';
@@ -279,7 +280,11 @@ class GetMaterialApp extends StatelessWidget {
                     : Get.addKey(navigatorKey!)),
                 scaffoldMessengerKey:
                     scaffoldMessengerKey ?? _.scaffoldMessengerKey,
-                home: home,
+                home: home != null
+                    ? GetPhoneSimulator(
+                        child: home!,
+                      )
+                    : home,
                 routes: routes ?? const <String, WidgetBuilder>{},
                 initialRoute: initialRoute,
                 onGenerateRoute:

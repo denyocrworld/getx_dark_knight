@@ -40,7 +40,8 @@ class _GetPhoneSimulatorState extends State<GetPhoneSimulator> {
             child: Row(
               children: [
                 Text(
-                  DateFormat("kk:mm").format(DateTime.now()),
+                  // DateFormat("kk:mm").format(DateTime.now()),
+                  "5:17 AM",
                   style: TextStyle(
                     color: Colors.white,
                   ),
