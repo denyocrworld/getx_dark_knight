@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:get/get_phone_simulator/get_phone_simulator.dart';
 
 import '../../get_core/get_core.dart';
 import '../../get_instance/src/bindings_interface.dart';
@@ -550,7 +551,7 @@ extension GetNavigation on GetInterface {
           '''WARNING, consider using: "Get.$method(() => Page())" instead of "Get.$method(Page())".
 Using a widget function instead of a widget fully guarantees that the widget and its controllers will be removed from memory when they are no longer used.
       ''');
-      return () => page;
+      return () => GetPhoneSimulator(child: page);
     } else if (page is String) {
       throw '''Unexpected String,
 use toNamed() instead''';
