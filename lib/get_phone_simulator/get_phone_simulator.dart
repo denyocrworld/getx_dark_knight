@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+bool enablePhoneSimulator = true;
+
 class GetPhoneSimulator extends StatefulWidget {
   final Widget child;
   GetPhoneSimulator({
@@ -22,6 +24,8 @@ class _GetPhoneSimulatorState extends State<GetPhoneSimulator> {
     } else if (Platform.isAndroid) {
       return widget.child;
     }
+
+    if (enablePhoneSimulator == false) return widget.child;
 
     return Scaffold(
       backgroundColor: Color(0xffDEEFFB),
